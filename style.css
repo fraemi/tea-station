@@ -1,0 +1,628 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+
+/* ----------- GLOBAL STYLES ----------- */
+:root {
+  --font: "Grand Hotel", cursive;
+  --letter-spacing: .25rem;
+  --line-height: 1.5;
+  --dark-green: #678e3e;
+  --light-green: #beed8c;
+  --dark-gray: #102a42;
+  --gray: #617d98;
+  --light-gray: #f1f5f8;
+  --transition: all 0.3s linear;
+  --radius: .5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Catamaran", sans-serif;
+  color: var(--dark-gray);
+  letter-spacing: var(--letter-spacing);
+  line-height: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin: 0 0 .75rem;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  color: var(--dark-green);
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: .875rem;
+  margin-bottom: .75rem;
+  text-transform: capitalize;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--gray);
+  line-height: var(--line-height);
+  letter-spacing: normal;
+}
+
+img {
+  width: 100%;
+  display: block;
+  transition: var(--transition);
+}
+
+.section-center {
+  margin: 0 auto;
+  padding: 4rem 0;
+  width: 85vw;
+  max-width: 73.125rem;
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.highlight {
+  color: var(--dark-green);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* ----------- BUTTONS ----------- */
+.button {
+  padding: .375rem .75rem;
+  display: inline-block;
+  font-size: .875rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--dark-green);
+  transition: var(--transition);
+  box-shadow: 0 .0625rem .1875rem rgb(0 0 0 / 20%);
+}
+
+.button:hover {
+  background: var(--light-green);
+  color: var(--dark-green);
+}
+
+/* ----------- MENU ----------- */
+#menu-button {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  cursor: pointer;
+  z-index: 2;
+  animation: bounce ease 2s infinite;
+}
+
+#nav-button {
+  padding-right: 1rem;
+  display: block;
+  text-align: right;
+}
+
+#nav-button i {
+  font-size: 2.5rem;
+  color: #f29c9c;
+  line-height: 1.5;
+  letter-spacing: normal;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#nav-button i:hover {
+  color: #bb2525;
+}
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--light-gray);
+  box-shadow: .125rem 0 .125rem rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  z-index: 2;
+  /* hide menu */
+  transform: translateX(-100%);
+}
+
+.show-menu {
+  transform: translate(0);
+}
+
+nav a {
+  padding: .25rem 1rem;
+  display: block;
+  font-size: 1.5rem;
+  color: var(--gray);
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  padding-left: 1.5rem;
+  background: var(--light-green);
+  color: var(--dark-green);
+  border-left: .25rem solid var(--dark-green);
+}
+
+/* ----------- HEADER ----------- */
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./images/main-bcg.jpeg) fixed center/cover no-repeat;
+}
+
+.header {
+  position: absolute;
+  top: 50%; /* top left corner of the element is 50% from the top */
+  left: 50%; /* top left corner of the element is 50% from the left */
+  transform: translate(-50%, -50%); /* 50% of its own height and width */
+  text-align: center;
+  letter-spacing: var(--letter-spacing);
+}
+
+.header h2 {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  animation: slideFromRight 5s ease-in-out 1;
+}
+
+.header h1 {
+  margin: 1.25rem 0 2rem;
+  font-family: var(--ff-secondary);
+  font-size: 3rem;
+  color: #fff;
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+
+.header a {
+  padding: 1rem 1.75rem;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: var(--line-height);
+  outline: .125rem solid var(--dark-green);
+  outline-offset: .25rem;
+  animation: enlarge 5s linear 1;
+}
+
+/* ----------- SECTION: SKILLS ----------- */
+#divider {
+  height: .5rem;
+  background: linear-gradient(
+    to right,
+    var(--dark-green),
+    #e9b949,
+    var(--dark-green)
+  );
+}
+
+.skills {
+  padding: 2.5rem 0;
+  text-align: center;
+  background: var(--light-gray);
+  float: left;
+  transition: var(--transition);
+}
+
+.skills i {
+  margin: 0 0 1.25rem;
+  display: inline-block;
+  font-size: 2.5rem;
+  line-height: var(--line-height);
+  color: var(--dark-green);
+  transition: var(--transition);
+}
+
+.skills h4 {
+  margin: 0 0 .75rem;
+  letter-spacing: var(--letter-spacing);
+}
+
+.skills p {
+  margin: 0 auto;
+  max-width: 17rem;
+}
+
+.skills:hover {
+  background: #fff;
+  box-shadow: 0 .125rem var(--dark-green);
+}
+
+.skills:hover i {
+  transform: translateY(-0.3125rem);
+}
+
+/* ----------- SECTION: ABOUT ----------- */
+.about-img {
+  padding: 2rem 0;
+}
+
+.img-container {
+  background: var(--dark-green);
+  border: .5rem solid var(--dark-green);
+  max-width: 30rem;
+  overflow: hidden;
+}
+
+.img-container:hover img {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.about-text {
+  padding: 2rem 0;
+}
+
+.about-text p {
+  max-width: 26rem;
+}
+
+/* ----------- SECTION: PRODUCTS ----------- */
+#products {
+  background: var(--light-gray);
+}
+
+.products-text,
+.products-inventory {
+  padding: 2rem 0;
+}
+
+.product {
+  padding: 0 1rem;
+}
+
+.product img {
+  margin-bottom: 2rem;
+  height: 17rem;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* ----------- SECTION: SERVICES ----------- */
+#services {
+  text-align: center;
+}
+
+#services h2 {
+  margin-bottom: .75rem;
+}
+
+.services-card {
+  margin: 2rem 0;
+  border-radius: var(--radius);
+  box-shadow: 0 .3125rem .9375rem rgb(0 0 0 / 10%);
+  transition: var(--transition);
+}
+
+.services-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 .3125rem .9375rem rgb(0 0 0 / 20%);
+}
+
+.services-img img {
+  height: 17rem;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.services-text {
+  padding: 3rem 1rem 2.5rem;
+  background: var(--light-gray);
+  position: relative;
+}
+
+.services-text p {
+  margin: 0;
+}
+
+.services-text .button {
+  margin-top: 1.25rem;
+  padding: .375rem .5rem;
+  font-size: .75rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+}
+
+.services-icon {
+  padding: .25rem .6rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: 2rem;
+  line-height: normal;
+  background: var(--light-green);
+  border: .375rem solid var(--light-gray);
+  border-radius: 50%;
+  color: var(--dark-green);
+  transform: translate(-50%, -50%);
+}
+
+/* ----------- SECTION: CONTACT ----------- */
+#contact {
+  background: var(--light-gray);
+}
+
+.contact-text-item {
+  margin-bottom: 1.75rem;
+}
+
+.contact-title {
+  font-weight: normal;
+  color: var(--dark-green);
+}
+
+.contact-form {
+  max-width: 35rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 .3125rem .9375rem rgb(0 0 0 / 10%);
+}
+
+.contact-form h3 {
+  padding-top: 1.25rem;
+  font: 900 1.5rem Catamaran, sans-serif;
+  color: var(--gray);
+  line-height: 1;
+  text-align: center;
+}
+
+.contact-form .button {
+  padding: 1rem;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.form-fields {
+  padding: 1rem 1.5rem;
+}
+
+input,
+textarea {
+  margin-bottom: 1.25rem;
+  padding: .75rem 1rem;
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
+  background: var(--light-gray);
+  border: 0;
+  border-radius: var(--radius);
+}
+
+::placeholder {
+  color: #000;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+  background: #222;
+  text-align: center;
+  clear: both;
+}
+
+footer h4 {
+  margin: 1.25rem 0 .75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#date {
+  color: #fff;
+}
+
+.footer-icon {
+  margin-right: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-icon i {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: var(--transition);
+}
+
+.footer-icon:hover i {
+  color: var(--dark-green);
+}
+
+/* ----------- ANIMATIONS ----------- */
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(62.5rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-12.5rem);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(3.125rem);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-62.5rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(12.5rem);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-3.125rem);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ----------- MEDIA QUERIES ----------- */
+@media screen and (min-width: 576px) {
+  .skills {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    width: 30vw;
+    max-width: 20rem;
+  }
+  .product {
+    float: left;
+    width: 50%;
+    padding-right: 2rem;
+  }
+  .services-card {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .header h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3, .contact-form h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    padding: 4rem 1rem;
+    width: 95vw;
+  }
+  .about-img,
+  .about-text {
+    float: left;
+    width: 50%;
+  }
+  .about-text {
+    padding-left: 2rem;
+  }
+  .product {
+    width: 33.3%;
+  }
+  .services-card {
+    width: 30%;
+    margin-right: 3.333%;
+  }
+  .contact-form,
+  .contact-text {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .skills {
+    width: 25%;
+  }
+  .products-text {
+    float: left;
+    width: 30%;
+  }
+  .products-inventory {
+    float: left;
+    width: 70%;
+  }
+  .product {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
+}
+
